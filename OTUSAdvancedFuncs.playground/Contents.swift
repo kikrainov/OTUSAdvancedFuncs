@@ -54,3 +54,6 @@ var y = countFactorial(with: 5)
 
 
 /* Дженерик-функция с условием */
+func min<T: Comparable>(_ x: T, _ y: T) -> T {
+       return y < x ? y : x
+}
