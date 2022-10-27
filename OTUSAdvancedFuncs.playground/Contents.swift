@@ -23,7 +23,16 @@ func someFunctionThatTakesAClosure(closure1: () -> Void, closure2: () -> Void) {
 }
 
 /* Функция с autoclosure */
+func catchFailure(_ isFailable: @autoclosure () -> Bool) {
+    if isFailable() {
+        print("You put the wrong parameter")
+    } else {
+        print("Go ahead")
+    }
+}
 
+catchFailure(true)
+catchFailure(false)
 
 
 /* Использование внутренних функций */
@@ -57,3 +66,4 @@ var y = countFactorial(with: 5)
 func min<T: Comparable>(_ x: T, _ y: T) -> T {
        return y < x ? y : x
 }
+
